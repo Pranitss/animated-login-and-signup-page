@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robotic Theme Login</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #292b2c;
+            color: white;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            transform-origin: left bottom;
+            transform: perspective(1000px) rotateX(0deg);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .input-group input:focus {
+            transform: perspective(1000px) rotateX(-360deg);
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .input-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: margin-left 0.5s ease-in-out;
+        }
+
+        .input-group button:hover {
+            background-color: #0056b3;
+            margin-left: 10px;
+        }
+
+        .message {
+            color: #dc3545;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <h2>Robotic Theme Login</h2>
+        <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your username">
+        </div>
+
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password">
+        </div>
+
+        <button onclick="login()">Login</button>
+
+        <p class="message" id="error-message"></p>
+    </div>
+
+    <script>
+        function login() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Example: Check if username and password are correct (for demonstration purposes)
+            if (username === 'demo' && password === 'demo') {
+                document.getElementById('error-message').innerText = 'Login successful!';
+                document.getElementById('error-message').style.color = '#28a745';
+            } else {
+                document.getElementById('error-message').innerText = 'Invalid username or password.';
+                document.getElementById('error-message').style.color = '#dc3545';
+            }
+        }
+    </script>
+</body>
+
+</html>
